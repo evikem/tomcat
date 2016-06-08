@@ -1,6 +1,16 @@
     version: '2'
     services:
-        tomcat7:
+        loadbalance:
              build: .
              ports:
-                - "8080:8080"
+                - "81:80"
+                
+        tomcat1:
+             build: ./tomcat
+             ports:
+                - "82:8080"
+
+        tomcat2:
+             build: ./tomcat
+             ports:
+                - "83:8080"
