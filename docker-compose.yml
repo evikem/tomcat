@@ -14,3 +14,8 @@
              build: ./tomcat
              ports:
                 - "83:8080"
+
+        tomcat3:
+             build: ./tomcat
+             ports:
+                - "84:8080"
