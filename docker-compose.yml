@@ -9,13 +9,20 @@
              build: ./tomcat
              ports:
                 - "82:8080"
+             volumes: 
+                - /home/vagrant/data/static1/:/usr/local/static
+                - /home/vagrant/data/backup/:/usr/local/backup
 
         tomcat2:
              build: ./tomcat
              ports:
                 - "83:8080"
+             volumes:   
+                - /home/vagrant/data/static2/:/usr/local/static
 
         tomcat3:
              build: ./tomcat
              ports:
                 - "84:8080"
+             volumes:
+                - /home/vagrant/data/static3/:/usr/local/static
