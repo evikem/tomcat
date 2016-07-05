@@ -11,7 +11,7 @@
                 - "82:8080"
              volumes: 
                 - /home/vagrant/data/static1/:/usr/local/static
-                - /home/vagrant/data/backup/:/usr/local/backup
+                - /home/vagrant/data/webapps:/opt/apache-tomcat-7.0.69/webapps
 
         tomcat2:
              build: ./tomcat
