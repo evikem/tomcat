@@ -19,6 +19,7 @@
                 - "83:8080"
              volumes:   
                 - /home/vagrant/data/static2/:/usr/local/static
+                - /home/vagrant/data/webapps2/:/opt/apache-tomcat-7.0.69/webapps
 
         tomcat3:
              build: ./tomcat
@@ -26,3 +27,4 @@
                 - "84:8080"
              volumes:
                 - /home/vagrant/data/static3/:/usr/local/static
+                - /home/vagrant/data/webapps2/:/opt/apache-tomcat-7.0.69/webapps
