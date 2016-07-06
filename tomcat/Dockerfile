@@ -18,6 +18,9 @@ COPY tomcat-users.xml /opt/apache-tomcat-7.0.69/conf/tomcat-users.xml
 
 RUN mkdir /usr/local/static && chmod 640 /usr/local/static
 RUN mkdir /usr/local/backup && chmod 640 /usr/local/backup
+RUN mkdir /usr/local/webapps && chmod 640 /usr/local/webapps
+RUN mkdir /usr/local/webapps2 && chmod 640 /usr/local/webapps2
+
 RUN cd /opt/apache-tomcat-7.0.69/conf/ && rm server.xml
 COPY server.xml /opt/apache-tomcat-7.0.69/conf/server.xml
 
