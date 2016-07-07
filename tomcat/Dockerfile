@@ -18,10 +18,11 @@ COPY tomcat-users.xml /opt/apache-tomcat-7.0.69/conf/tomcat-users.xml
 
 RUN mkdir /usr/local/static && chmod 640 /usr/local/static
 RUN mkdir /usr/local/backup && chmod 640 /usr/local/backup
-RUN chmod 640 /opt/apache-tomcat-7.0.69/webapps && chown root:root /opt/apache-tomcat-7.0.69/webapps
 
 RUN cd /opt/apache-tomcat-7.0.69/conf/ && rm server.xml
 COPY server.xml /opt/apache-tomcat-7.0.69/conf/server.xml
+
+RUN groupadd admin && usermod -aG admin root
 
 RUN curl -jkLH "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/${JMAJOR}u${JUPDATE}-b${JB}/jre-${JMAJOR}u${JUPDATE}-linux-x64.tar.gz" > /opt/jre-${JMAJOR}u${JUPDATE}-linux-x64.tar.gz \
  		&& tar zxvf /opt/jre-${JMAJOR}u${JUPDATE}-linux-x64.tar.gz -C /opt \
